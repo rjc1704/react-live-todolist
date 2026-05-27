@@ -28,11 +28,11 @@
 
 .todoLabel {
   background-color: var(--color-lime-300);
-  color: var(--color-amber-800);
+  color: var(--color-green-700);
 }
 
 .doneLabel {
-  background-color: var(--color-slate-900);
+  background-color: var(--color-green-700);
   color: var(--color-lime-300);
 }
 
