@@ -1,3 +1,4 @@
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css");
 @import url(./styles/reset.css);
 
 :root {
@@ -29,7 +30,18 @@
 }
 
 body {
-  font-family: "NanumSquareNeo";
+  font-family: "NanumSquareNeo", sans-serif;
+  background-color: var(--color-slate-100);
+  color: var(--color-slate-900);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
 }
 
 @media (max-width: 1199px) {
