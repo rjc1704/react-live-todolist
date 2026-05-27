@@ -45,8 +45,8 @@
 }
 
 .addButton.active {
-  background-color: var(--color-violet-600);
-  color: white;
+  background-color: var(--color-lime-300);
+  color: var(--color-slate-900);
 }
 
 .addButton img {
