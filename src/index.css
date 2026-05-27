@@ -1,0 +1,30 @@
+@import url(./styles/reset.css);
+
+:root {
+  /* slate */
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-slate-500: #64748b;
+  --color-slate-400: #94a3b8;
+  --color-slate-300: #cbd5e1;
+  --color-slate-200: #e2e8f0;
+  --color-slate-100: #f1f5f9;
+
+  /* violet */
+  --color-violet-600: #7c3aed;
+  --color-violet-100: #ede9fe;
+
+  /* rose */
+  --color-rose-500: #f43f5e;
+
+  /* lime */
+  --color-lime-300: #bef264;
+
+  /* amber */
+  --color-amber-800: #92400e;
+}
+
+body {
+  font-family: "NanumSquareNeo";
+  /* font-family: 'NanumSquareNeoBold'; */
+}
