@@ -7,6 +7,8 @@ import todoEmptyLg from "../assets/imgs/todo-lg.svg";
 import todoEmptySm from "../assets/imgs/todo-sm.svg";
 import doneEmptyLg from "../assets/imgs/done-lg.svg";
 import doneEmptySm from "../assets/imgs/done-sm.svg";
+import todoIcon from "../assets/imgs/todo.svg";
+import doneIcon from "../assets/imgs/done.svg";
 import styles from "./Home.module.css";
 
 export default function Home() {
@@ -58,7 +60,9 @@ export default function Home() {
 
       <div className={styles.sections}>
         <section className={styles.section}>
-          <h2 className={`${styles.label} ${styles.todoLabel}`}>TO DO</h2>
+          <h2>
+            <img src={todoIcon} alt="TODO" />
+          </h2>
           {todos.length === 0 ? (
             <div className={styles.empty}>
               <img src={isMobile ? todoEmptySm : todoEmptyLg} alt="" />
@@ -85,7 +89,9 @@ export default function Home() {
         </section>
 
         <section className={styles.section}>
-          <h2 className={`${styles.label} ${styles.doneLabel}`}>DONE</h2>
+          <h2>
+            <img src={doneIcon} alt="DONE" />
+          </h2>
           {dones.length === 0 ? (
             <div className={styles.empty}>
               <img src={isMobile ? doneEmptySm : doneEmptyLg} alt="" />
