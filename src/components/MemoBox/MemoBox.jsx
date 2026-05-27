@@ -1,12 +1,8 @@
-import memoBg from "../../assets/imgs/memo.svg";
 import styles from "./MemoBox.module.css";
 
 export default function MemoBox({ value, onChange }) {
   return (
-    <div
-      className={styles.wrapper}
-      style={{ backgroundImage: `url(${memoBg})` }}
-    >
+    <div className={styles.wrapper}>
       <h3 className={styles.label}>Memo</h3>
       <textarea
         className={styles.textarea}
