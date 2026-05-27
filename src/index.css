@@ -24,7 +24,18 @@
   --color-amber-800: #92400e;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "NanumSquareNeo";
-  /* font-family: 'NanumSquareNeoBold'; */
+}
+
+@media (max-width: 1199px) {
+  /* tablet */
+}
+
+@media (max-width: 743px) {
+  /* mobile */
 }
