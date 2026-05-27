@@ -3,6 +3,8 @@ import Search from "../components/Search/Search";
 import CheckList from "../components/CheckList/CheckList";
 import { createItem, getItems, updateItem } from "../lib/api";
 import styles from "./Home.module.css";
+import todoIcon from "../assets/imgs/todo.svg";
+import doneIcon from "../assets/imgs/done.svg";
 
 export default function Home() {
   const [items, setItems] = useState([]);
@@ -52,7 +54,9 @@ export default function Home() {
 
       <div className={styles.sections}>
         <section className={styles.section}>
-          <h2 className={`${styles.label} ${styles.todoLabel}`}>TO DO</h2>
+          <h2>
+            <img src={todoIcon} alt="TODO" />
+          </h2>
           <ul className={styles.list}>
             {todos.map((item) => (
               <li key={item.id}>
@@ -68,7 +72,9 @@ export default function Home() {
         </section>
 
         <section className={styles.section}>
-          <h2 className={`${styles.label} ${styles.doneLabel}`}>DONE</h2>
+          <h2>
+            <img src={doneIcon} alt="DONE" />
+          </h2>
           <ul className={styles.list}>
             {dones.map((item) => (
               <li key={item.id}>
