@@ -1,0 +1,20 @@
+.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* tablet */
+@media (max-width: 1199px) {
+  .main {
+    padding: 24px;
+  }
+}
+
+/* mobile */
+@media (max-width: 743px) {
+  .main {
+    padding: 16px;
+  }
+}
