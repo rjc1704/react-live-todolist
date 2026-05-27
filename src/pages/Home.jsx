@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
 import Search from "../components/Search/Search";
-import CheckList from "../components/CheckList/CheckList";
 import { createItem, getItems, updateItem } from "../lib/api";
-import todoEmptyLg from "../assets/imgs/todo-lg.svg";
-import todoEmptySm from "../assets/imgs/todo-sm.svg";
-import doneEmptyLg from "../assets/imgs/done-lg.svg";
-import doneEmptySm from "../assets/imgs/done-sm.svg";
-import todoIcon from "../assets/imgs/todo.svg";
-import doneIcon from "../assets/imgs/done.svg";
+
 import styles from "./Home.module.css";
+import TodoSection from "../components/TodoSection/TodoSection";
 
 export default function Home() {
   const [items, setItems] = useState([]);
   const [inputValue, setInputValue] = useState("");
-  const isMobile = useMediaQuery({ maxWidth: 743 });
 
   useEffect(() => {
     const loadItems = async () => {
@@ -59,63 +52,8 @@ export default function Home() {
       <Search value={inputValue} onChange={setInputValue} onAdd={handleAdd} />
 
       <div className={styles.sections}>
-        <section className={styles.section}>
-          <h2>
-            <img src={todoIcon} alt="TODO" />
-          </h2>
-          {todos.length === 0 ? (
-            <div className={styles.empty}>
-              <img src={isMobile ? todoEmptySm : todoEmptyLg} alt="" />
-              <p className={styles.emptyText}>
-                할 일이 없어요.
-                <br />
-                TODO를 새롭게 추가해주세요!
-              </p>
-            </div>
-          ) : (
-            <ul className={styles.list}>
-              {todos.map((item) => (
-                <li key={item.id}>
-                  <CheckList
-                    id={item.id}
-                    name={item.name}
-                    isCompleted={item.isCompleted}
-                    onToggle={handleToggle}
-                  />
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-
-        <section className={styles.section}>
-          <h2>
-            <img src={doneIcon} alt="DONE" />
-          </h2>
-          {dones.length === 0 ? (
-            <div className={styles.empty}>
-              <img src={isMobile ? doneEmptySm : doneEmptyLg} alt="" />
-              <p className={styles.emptyText}>
-                아직 다 한 일이 없어요.
-                <br />
-                해야 할 일을 체크해보세요!
-              </p>
-            </div>
-          ) : (
-            <ul className={styles.list}>
-              {dones.map((item) => (
-                <li key={item.id}>
-                  <CheckList
-                    id={item.id}
-                    name={item.name}
-                    isCompleted={item.isCompleted}
-                    onToggle={handleToggle}
-                  />
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
+        <TodoSection todos={todos} handleToggle={handleToggle} isDone={false} />
+        <TodoSection todos={dones} handleToggle={handleToggle} isDone={true} />
       </div>
     </div>
   );
