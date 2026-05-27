@@ -40,22 +40,10 @@
 /* mobile */
 @media (max-width: 743px) {
   .actions {
-    position: fixed;
-    right: 16px;
-    bottom: 16px;
-    flex-direction: column;
-    z-index: 10;
-  }
-
-  .button {
-    width: 56px;
-    height: 56px;
-    padding: 0;
-    border-radius: 50%;
     justify-content: center;
   }
 
-  .button span {
-    display: none;
+  .button {
+    padding: 12px 24px;
   }
 }
