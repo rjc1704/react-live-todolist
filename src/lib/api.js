@@ -27,19 +27,15 @@ export const updateItem = (id, data) =>
     body: JSON.stringify(data),
   });
 
-export const deleteItem = (id) =>
-  request(`/items/${id}`, { method: "DELETE" });
+export const deleteItem = (id) => request(`/items/${id}`, { method: "DELETE" });
 
 export const uploadImage = async (file) => {
   const formData = new FormData();
   formData.append("image", file);
-  const res = await fetch(
-    `${BASE_URL}/api/${TENANT_ID}/images/upload`,
-    {
-      method: "POST",
-      body: formData,
-    },
-  );
+  const res = await fetch(`${BASE_URL}/api/${TENANT_ID}/images/upload`, {
+    method: "POST",
+    body: formData,
+  });
   if (!res.ok) throw new Error(`API ${res.status}: ${res.statusText}`);
   return res.json();
 };
