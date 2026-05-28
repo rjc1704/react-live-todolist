@@ -1,6 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 import plusIcon from "../../assets/icons/plus.svg";
 import plusVacantIcon from "../../assets/icons/plus-vacant.svg";
+import Button from "../Button/Button";
 import styles from "./Search.module.css";
 
 export default function Search({ value, onChange, onAdd }) {
@@ -22,14 +23,16 @@ export default function Search({ value, onChange, onAdd }) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />
-      <button
+      <Button
         type="submit"
-        className={`${styles.addButton} ${isEmpty ? styles.vacant : styles.active}`}
+        variant={isEmpty ? "default" : "primary"}
+        shape={isMobile ? "round" : "pill"}
+        iconSrc={isEmpty ? plusVacantIcon : plusIcon}
         disabled={isEmpty}
+        aria-label="추가하기"
       >
-        <img src={isEmpty ? plusVacantIcon : plusIcon} alt="추가" />
-        {!isMobile && <span>추가하기</span>}
-      </button>
+        추가하기
+      </Button>
     </form>
   );
 }
