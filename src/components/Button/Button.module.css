@@ -1,0 +1,85 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+/* shape ------------------------------------ */
+.pill {
+  height: 56px;
+  padding: 0 24px;
+  border-radius: 999px;
+}
+
+.round {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.round.size-lg {
+  width: 64px;
+  height: 64px;
+}
+
+/* variant ---------------------------------- */
+.default {
+  background-color: var(--color-slate-200);
+  color: var(--color-slate-900);
+  border: 2px solid var(--color-slate-900);
+  box-shadow: 4px 4px 0 var(--color-slate-900);
+}
+
+.primary {
+  background-color: var(--color-violet-600);
+  color: white;
+  border: none;
+}
+
+.success {
+  background-color: var(--color-lime-300);
+  color: var(--color-slate-900);
+  border: 2px solid var(--color-slate-900);
+  box-shadow: 4px 4px 0 var(--color-slate-900);
+}
+
+.danger {
+  background-color: var(--color-rose-500);
+  color: white;
+  border: none;
+}
+
+.danger img {
+  filter: invert(1);
+}
+
+.dark {
+  background-color: var(--color-slate-900);
+  color: white;
+  border: 2px solid var(--color-slate-900);
+}
+
+.dark img {
+  filter: invert(1);
+}
+
+/* icon size -------------------------------- */
+.button img {
+  width: 16px;
+  height: 16px;
+}
+
+.round img {
+  width: 24px;
+  height: 24px;
+}
