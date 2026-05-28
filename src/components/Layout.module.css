@@ -1,0 +1,19 @@
+.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1199px) {
+  /* tablet */
+  .main {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 743px) {
+  /* mobile */
+  .main {
+    padding: 0 12px;
+  }
+}

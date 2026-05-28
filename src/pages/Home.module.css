@@ -1,0 +1,30 @@
+.add {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 1199px) {
+  .sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+.input {
+  width: 100%;
+}
+.button {
+  white-space: nowrap;
+}
+
+.ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
