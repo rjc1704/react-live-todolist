@@ -1,0 +1,19 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* mobile */
+@media (max-width: 743px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
