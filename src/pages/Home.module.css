@@ -11,15 +11,40 @@
   gap: 24px;
 }
 
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  display: inline-block;
+  padding: 4px 32px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.todoLabel {
+  background-color: var(--color-lime-300);
+  color: var(--color-green-700);
+}
+
+.doneLabel {
+  background-color: var(--color-green-700);
+  color: var(--color-lime-300);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 /* tablet/mobile */
 @media (max-width: 1199px) {
   .sections {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 743px) {
-  .empty img {
-    width: 120px;
   }
 }
