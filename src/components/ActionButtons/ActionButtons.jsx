@@ -1,26 +1,27 @@
 import checkIcon from "../../assets/icons/check.svg";
 import xIcon from "../../assets/icons/X.svg";
+import Button from "../Button/Button";
 import styles from "./ActionButtons.module.css";
 
-export default function ActionButtons({ onSubmit, onDelete }) {
+export default function ActionButtons({ isDirty, onSubmit, onDelete }) {
   return (
     <div className={styles.actions}>
-      <button
-        type="button"
-        className={`${styles.button} ${styles.submit}`}
+      <Button
+        variant={isDirty ? "success" : "default"}
+        shape="pill"
+        iconSrc={checkIcon}
         onClick={onSubmit}
       >
-        <img src={checkIcon} alt="" />
-        <span>수정 완료</span>
-      </button>
-      <button
-        type="button"
-        className={`${styles.button} ${styles.delete}`}
+        수정 완료
+      </Button>
+      <Button
+        variant="danger"
+        shape="pill"
+        iconSrc={xIcon}
         onClick={onDelete}
       >
-        <img src={xIcon} alt="" />
-        <span>삭제하기</span>
-      </button>
+        삭제하기
+      </Button>
     </div>
   );
 }

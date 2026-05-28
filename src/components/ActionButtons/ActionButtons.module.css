@@ -4,46 +4,9 @@
   justify-content: flex-end;
 }
 
-.button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 32px;
-  border: 2px solid var(--color-slate-900);
-  border-radius: 999px;
-  box-shadow: 4px 4px 0 var(--color-slate-900);
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.submit {
-  background-color: var(--color-slate-200);
-  color: var(--color-slate-900);
-}
-
-.delete {
-  background-color: var(--color-rose-500);
-  color: white;
-}
-
-.delete img {
-  filter: invert(1);
-}
-
-.button img {
-  width: 16px;
-  height: 16px;
-}
-
 /* mobile */
 @media (max-width: 743px) {
   .actions {
     justify-content: center;
-  }
-
-  .button {
-    padding: 12px 24px;
   }
 }

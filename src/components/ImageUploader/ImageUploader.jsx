@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import imgMark from "../../assets/imgs/img-mark.svg";
 import plusIcon from "../../assets/icons/plus.svg";
+import checkIcon from "../../assets/icons/check.svg";
+import Button from "../Button/Button";
 import { uploadImage } from "../../lib/api";
 import styles from "./ImageUploader.module.css";
 
@@ -42,14 +44,15 @@ export default function ImageUploader({ imageUrl, onChange }) {
           <img src={imgMark} alt="" />
         </div>
       )}
-      <button
-        type="button"
-        className={`${styles.button} ${imageUrl ? styles.edit : styles.add}`}
+      <Button
+        variant={imageUrl ? "dark" : "default"}
+        shape="round"
+        size="lg"
+        iconSrc={imageUrl ? checkIcon : plusIcon}
         onClick={handleClick}
         aria-label="이미지 업로드"
-      >
-        <img src={plusIcon} alt="" />
-      </button>
+        className={styles.uploadButton}
+      />
       <input
         ref={inputRef}
         type="file"
