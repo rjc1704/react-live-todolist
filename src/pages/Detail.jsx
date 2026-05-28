@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import TitleBar from "../components/TitleBar/TitleBar";
 import ImageUploader from "../components/ImageUploader/ImageUploader";
@@ -7,16 +7,24 @@ import ActionButtons from "../components/ActionButtons/ActionButtons";
 import { deleteItem, getItem, updateItem } from "../lib/api";
 import styles from "./Detail.module.css";
 
+const compareFields = (a, b) =>
+  a.name === b.name &&
+  (a.memo || "") === (b.memo || "") &&
+  (a.imageUrl || "") === (b.imageUrl || "") &&
+  a.isCompleted === b.isCompleted;
+
 export default function Detail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [item, setItem] = useState(null);
+  const initialRef = useRef(null);
 
   useEffect(() => {
     const load = async () => {
       try {
         const data = await getItem(id);
         setItem(data);
+        initialRef.current = data;
       } catch (err) {
         console.error(err);
       }
@@ -27,6 +35,10 @@ export default function Detail() {
   if (!item) return null;
 
   const setField = (key, value) => setItem({ ...item, [key]: value });
+
+  const isDirty = initialRef.current
+    ? !compareFields(item, initialRef.current)
+    : false;
 
   const handleSubmit = async () => {
     try {
@@ -70,7 +82,11 @@ export default function Detail() {
         <MemoBox value={item.memo} onChange={(memo) => setField("memo", memo)} />
       </div>
 
-      <ActionButtons onSubmit={handleSubmit} onDelete={handleDelete} />
+      <ActionButtons
+        isDirty={isDirty}
+        onSubmit={handleSubmit}
+        onDelete={handleDelete}
+      />
     </div>
   );
 }
